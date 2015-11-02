@@ -8,3 +8,5 @@ perduran, pero para ver como funciona session, cookie, viewstate y postback si s
 
 Tambien una forma de como manejar los diferentes postbacks creados por un treeview y por los botones capturandolos por
 la key de Request.Params[] con el metodo de retorno booleano this.IsPostBack, que se envia con cada llamada a la pagina.
+
+Ahora con Table y treeView Creados mediante HTML y a mano.
