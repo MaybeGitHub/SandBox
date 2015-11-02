@@ -17,6 +17,13 @@ namespace SandBox
             label_PostBack.Text = "Soy una label que coge valor de una PostBack y valgo ";
             label_Session.Text = "Soy una label que coge valor de una Session, guardo los datos en el servidor  y valgo ";
             label_ViewState.Text = "Soy una label que coge valor de un ViewState, guardo los datos en la info de la pagina  y valgo ";
+            button_A.Text = "Pulsame";
+            button_B.Text = "Pulsame";
+            button_C.Text = "Pulsame";
+            button_D.Text = "Pulsame";
+            label_Tree.Text = "Hoja del tree pulsada: ";
+
+            // Session
 
             if (Session["session"] != null)
             {
@@ -27,6 +34,8 @@ namespace SandBox
                 Session["session"] =  algo;
                 label_Session.Text += nada;
             }
+
+            // Cookie
 
             if (Request.Cookies["cookie"] != null)
             {
@@ -40,6 +49,8 @@ namespace SandBox
                 label_Cookie.Text += nada;
             }
 
+            // ViewState
+
             if (ViewState["viewstate"] != null)
             {
                 label_ViewState.Text += ViewState["viewstate"];
@@ -50,12 +61,58 @@ namespace SandBox
                 label_ViewState.Text += nada;
             }
 
+            //PostBack
+
             if (IsPostBack)
             {
                 label_PostBack.Text += algo;
+                cajaInfo.Text = "Cosas que afectan a este ejercicio\n----------------------------------\n";
+                foreach (string clave in Request.Params)
+                {
+                    if ( clave.Contains("button_A") && Request.Params[clave] != null)
+                    {
+                        cajaInfo.Text += "Clave: " + clave + "   Valor: " + Request.Params[clave] + "\n";
+                        button_A.Text = "He sido pulsado";
+                    }                    
+
+                    if (clave.Contains("button_B") && Request.Params[clave] != null)
+                    {
+                        cajaInfo.Text += "Clave: " + clave + "   Valor: " + Request.Params[clave] + "\n";
+                        button_B.Text = "He sido pulsado";
+                    }                    
+
+                    if (clave.Contains("button_C") && Request.Params[clave] != null)
+                    {
+                        cajaInfo.Text += "Clave: " + clave + "   Valor: " + Request.Params[clave] + "\n";
+                        button_C.Text = "He sido pulsado";
+                    }
+
+                    if (clave.Contains("button_D") && Request.Params[clave] != null)
+                    {
+                        cajaInfo.Text += "Clave: " + clave + "   Valor: " + Request.Params[clave] + "\n";
+                        button_D.Text = "He sido pulsado";
+                    }
+
+                    // TreeView
+
+                    if (clave.Contains("EVENTARGUMENT") && Request.Params[clave] != null)
+                    {
+                        cajaInfo.Text += "Clave: " + clave + "   Valor: " + Request.Params[clave] + "\n";
+                        string[] pathHojaPulsadaTree = Request.Params[clave].Split('\\');
+                        int profundidadHoja = pathHojaPulsadaTree.Count();
+                        switch (profundidadHoja)
+                        {
+                            case 1: label_Tree.Text += pathHojaPulsadaTree.ElementAt(0).Substring(1); break;
+                            case 2: label_Tree.Text += pathHojaPulsadaTree.ElementAt(1); break;
+                            case 3: label_Tree.Text += pathHojaPulsadaTree.ElementAt(2); break;
+                            case 4: label_Tree.Text += pathHojaPulsadaTree.ElementAt(3); break;
+                        }
+                    }
+                }
             }
             else
             {
+                cajaInfo.Text += "Tengo mucho que mostrar pero para este ejercicio nada que interese";
                 label_PostBack.Text += nada;
             }
         }
