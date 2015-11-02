@@ -21,8 +21,8 @@ namespace SandBox
             button_B.Text = "Pulsame";
             button_C.Text = "Pulsame";
             button_D.Text = "Pulsame";
-            label_Tree.Text = "Hoja del tree pulsada: ";
-
+            label_Tree.Text = "Hoja del tree pulsada: ";          
+            
             // Session
 
             if (Session["session"] != null)
@@ -61,6 +61,27 @@ namespace SandBox
                 label_ViewState.Text += nada;
             }
 
+            // Creando Celdas Nuevas de Table a mano, a diferencia del treeView no se guarda entre postbacks, asique hay que crearlo de nuevo siempre
+
+            TableRow nuevaFila = new TableRow();
+
+            TableCell nuevaColumna = new TableCell();
+            nuevaColumna.Text = "Celda Dinamica 1";
+            nuevaColumna.BorderWidth = 1;
+            nuevaFila.Cells.Add(nuevaColumna);
+
+            nuevaColumna = new TableCell();
+            nuevaColumna.Text = "Celda Dinamica 2";
+            nuevaColumna.BorderWidth = 1;
+            nuevaFila.Cells.Add(nuevaColumna);
+
+            nuevaColumna = new TableCell();
+            nuevaColumna.Text = "Celda Dinamica 3";
+            nuevaColumna.BorderWidth = 1;
+            nuevaFila.Cells.Add(nuevaColumna);
+
+            tabla_Predefinida.Rows.Add(nuevaFila);
+
             //PostBack
 
             if (IsPostBack)
@@ -69,6 +90,11 @@ namespace SandBox
                 cajaInfo.Text = "Cosas que afectan a este ejercicio\n----------------------------------\n";
                 foreach (string clave in Request.Params)
                 {
+                    if (clave.Contains(button_PostBack.ID) && Request.Params[clave] != null)
+                    {
+                        cajaInfo.Text += "Clave: " + clave + "   Valor: " + Request.Params[clave] + "\n";
+                    }
+
                     if ( clave.Contains("button_A") && Request.Params[clave] != null)
                     {
                         cajaInfo.Text += "Clave: " + clave + "   Valor: " + Request.Params[clave] + "\n";
@@ -95,7 +121,7 @@ namespace SandBox
 
                     // TreeView
 
-                    if (clave.Contains("EVENTARGUMENT") && Request.Params[clave] != null)
+                    if (clave.Contains("EVENTARGUMENT") && Request.Params[clave] != "")
                     {
                         cajaInfo.Text += "Clave: " + clave + "   Valor: " + Request.Params[clave] + "\n";
                         string[] pathHojaPulsadaTree = Request.Params[clave].Split('\\');
@@ -113,6 +139,15 @@ namespace SandBox
             else
             {
                 cajaInfo.Text += "Tengo mucho que mostrar pero para este ejercicio nada que interese";
+               
+                // Creando Hojas Nuevas de TreeView a mano, lo pongo en el !IsPostBack para que solo se haga al cargar la pagina
+
+                TreeNode ramaB = new TreeNode("Rama Creada con C#", "Rama Creada con C#");
+                ramaB.ChildNodes.Add(new TreeNode("Hoja Dinamica 1", "Hoja Dinamica 1"));
+                ramaB.ChildNodes[0].ChildNodes.Add(new TreeNode("Hoja Dinamica 2", "Hoja Dinamica 2"));
+                ramaB.ChildNodes[0].ChildNodes[0].ChildNodes.Add(new TreeNode("Hoja Dinamica 3", "Hoja Dinamica 3"));
+                treeViewPredefinido.Nodes.Add(ramaB);                
+
                 label_PostBack.Text += nada;
             }
         }

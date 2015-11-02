@@ -40,24 +40,6 @@ namespace SandBox {
         protected global::System.Web.UI.WebControls.Label label_Session;
         
         /// <summary>
-        /// label_ViewState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label_ViewState;
-        
-        /// <summary>
-        /// label_PostBack control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label_PostBack;
-        
-        /// <summary>
         /// button_PostBack control.
         /// </summary>
         /// <remarks>
@@ -65,24 +47,6 @@ namespace SandBox {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button button_PostBack;
-        
-        /// <summary>
-        /// button_CambioPagina_Server control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button_CambioPagina_Server;
-        
-        /// <summary>
-        /// button_CambioPagina_Redirect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button button_CambioPagina_Redirect;
         
         /// <summary>
         /// button_A control.
@@ -103,6 +67,60 @@ namespace SandBox {
         protected global::System.Web.UI.WebControls.Button button_B;
         
         /// <summary>
+        /// treeViewPredefinido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TreeView treeViewPredefinido;
+        
+        /// <summary>
+        /// label_Tree control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label_Tree;
+        
+        /// <summary>
+        /// label_ViewState control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label_ViewState;
+        
+        /// <summary>
+        /// label_PostBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label_PostBack;
+        
+        /// <summary>
+        /// button_CambioPagina_Server control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button_CambioPagina_Server;
+        
+        /// <summary>
+        /// button_CambioPagina_Redirect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button_CambioPagina_Redirect;
+        
+        /// <summary>
         /// button_C control.
         /// </summary>
         /// <remarks>
@@ -121,22 +139,13 @@ namespace SandBox {
         protected global::System.Web.UI.WebControls.Button button_D;
         
         /// <summary>
-        /// treeViewPredefinido control.
+        /// tabla_Predefinida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TreeView treeViewPredefinido;
-        
-        /// <summary>
-        /// label_Tree control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label_Tree;
+        protected global::System.Web.UI.WebControls.Table tabla_Predefinida;
         
         /// <summary>
         /// cajaInfo control.
